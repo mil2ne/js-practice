@@ -1,9 +1,11 @@
-// .includes()
+// .push() .unshift()
+// 원본 수정됨 주의
+
 const numbers = [1,2,3,4]
 const fruits = ['Apple', 'Banana', 'Cherry']
 
-const a = numbers.includes(3)
-console.log(a) // true
+numbers.push(5)
+console.log(numbers) // 가장 뒤쪽에 추가
 
-const b = fruits.includes('test')
-console.log(b) // false
+numbers.unshift(0)
+console.log(numbers) // 가장 앞쪽에 추가
