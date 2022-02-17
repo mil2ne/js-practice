@@ -1,17 +1,20 @@
-// splice()
-// 원본수정됨 주의
+// 객체 데이터 1(Object.assign)
 
-const numbers = [1,2,3,4]
-const fruits = ['Apple', 'Banana', 'Cherry']
+const userAge = {
+  name: 'mil2ne',
+  age: 85
+}
 
-numbers.splice(2,2) 
-console.log(numbers) // 1,2
+const userEmail = {
+  name: 'mil2ne',
+  email: 'mil2ne@gmail.com'
+}
 
-numbers.splice(1,0,999)
-console.log(numbers) // 1,999,2
+const target = Object.assign(userAge, userEmail)
+console.log(target) // {name: 'mil2ne', age: 85, email: 'mil2ne@gmail.com'}
+console.log(userAge) // {name: 'mil2ne', age: 85, email: 'mil2ne@gmail.com'}
+console.log(target === userAge) // true
 
-numbers.splice(2,1,99)
-console.log(numbers) // 1,999,99
-
-fruits.splice(2,0,'Orange')
-console.log(fruits) // 'Apple', 'Banana', 'Orange', 'Cherry'
+const a = {k: 123}
+const b = {k: 123}
+console.log(a === b) // false
