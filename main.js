@@ -1,20 +1,15 @@
-// 객체 데이터 3(Object.assign)
+// 객체 데이터 4(Object.keys)
 
-const userAge = {
-  name: 'mil2ne',
-  age: 85
+const user = {
+  name: 'Heropy',
+  age: 85,
+  email: 'thesecon@gmail.com'
 }
 
-const userEmail = {
-  name: 'mil2ne',
-  email: 'mil2ne@gmail.com'
-}
+const keys = Object.keys(user)
+console.log(keys) //  ['name', 'age', 'email']
 
-const target = Object.assign({}, userAge)
-console.log(target) // {name: 'mil2ne', age: 85}
-console.log(userAge) // {name: 'mil2ne', age: 85}
-console.log(target === userAge) // false
+console.log(user['email']) // thesecon@gmail.com
 
-const a = {k: 123}
-const b = {k: 123}
-console.log(a === b) // false
+const values = keys.map(key => user[key])
+console.log(values) // ['Heropy', 85, 'thesecon@gmail.com']
