@@ -1,4 +1,4 @@
-// 객체 데이터 2(Object.assign)
+// 객체 데이터 3(Object.assign)
 
 const userAge = {
   name: 'mil2ne',
@@ -10,8 +10,8 @@ const userEmail = {
   email: 'mil2ne@gmail.com'
 }
 
-const target = Object.assign({}, userAge, userEmail)
-console.log(target) // {name: 'mil2ne', age: 85, email: 'mil2ne@gmail.com'}
+const target = Object.assign({}, userAge)
+console.log(target) // {name: 'mil2ne', age: 85}
 console.log(userAge) // {name: 'mil2ne', age: 85}
 console.log(target === userAge) // false
 
