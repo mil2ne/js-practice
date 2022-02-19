@@ -1,20 +1,21 @@
-// use lodash - 1
+// use lodash - 2
 
 import _ from 'lodash' // from node_modules
 
-const usersA = [
+const users = [
   {userId: '1', name: 'Heropy'},
-  {userId: '2', name: 'Bob'}
+  {userId: '2', name: 'Bob'},
+  {userId: '3', name: 'Amy'},
+  {userId: '4', name: 'Neo'},
+  {userId: '5', name: 'Evan'}
 ]
 
-const usersB = [
-  {userId: '1', name: 'Heropy'},
-  {userId: '3', name: 'Amy'}
-]
+const foundUser = _.find(users, {name: 'Amy'})
+console.log(foundUser)
 
-const usersC = usersA.concat(usersB)
-console.log('concat', usersC)
-console.log('uniqBy', _.uniqBy(usersC, 'userId'))
+const foundUserIndex = _.findIndex(users, {name: 'Amy'})
+console.log(foundUserIndex)
 
-const usersD = _.unionBy(usersA,usersB,'userId')
-console.log('unionBy', usersD)
+_.remove(users, {name: 'Heropy'})
+console.log(users)
+
