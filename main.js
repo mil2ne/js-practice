@@ -1,15 +1,20 @@
+// use lodash - 1
+
 import _ from 'lodash' // from node_modules
-import checkType from './getType' // getType.js
-// import {random, user as heropy} from './getRandom' // getRandom.js
-// default 가 없으면 {} 안에 넣어야 함
-import * as R from './getRandom'
 
-// 가져오기, 내보내기 - 2
+const usersA = [
+  {userId: '1', name: 'Heropy'},
+  {userId: '2', name: 'Bob'}
+]
 
-console.log(_.camelCase('the hello world'))
-console.log(checkType([1,2,3]))
-// console.log(random(),random())
-console.log(R)
-console.log(R.random())
-console.log(R.user)
-console.log(R.default)
+const usersB = [
+  {userId: '1', name: 'Heropy'},
+  {userId: '3', name: 'Amy'}
+]
+
+const usersC = usersA.concat(usersB)
+console.log('concat', usersC)
+console.log('uniqBy', _.uniqBy(usersC, 'userId'))
+
+const usersD = _.unionBy(usersA,usersB,'userId')
+console.log('unionBy', usersD)
