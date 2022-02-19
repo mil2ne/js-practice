@@ -1,21 +1,23 @@
-// use lodash - 2
+// use json - 1
 
-import _ from 'lodash' // from node_modules
+import myData from './myData.json'
 
-const users = [
-  {userId: '1', name: 'Heropy'},
-  {userId: '2', name: 'Bob'},
-  {userId: '3', name: 'Amy'},
-  {userId: '4', name: 'Neo'},
-  {userId: '5', name: 'Evan'}
-]
+console.log(myData)
 
-const foundUser = _.find(users, {name: 'Amy'})
-console.log(foundUser)
+const user = {
+  name: 'Heropy',
+  age: 85,
+  emails: [
+    'thesecon@gmail.com',
+    'mil2ne@gmail.com'
+  ]
+}
 
-const foundUserIndex = _.findIndex(users, {name: 'Amy'})
-console.log(foundUserIndex)
+console.log(user)
 
-_.remove(users, {name: 'Heropy'})
-console.log(users)
+const str = JSON.stringify(user)
+console.log('str', str)
+console.log(typeof str)
 
+const obj = JSON.parse(str)
+console.log('obj', obj)
