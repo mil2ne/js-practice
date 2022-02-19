@@ -1,3 +1,3 @@
-export default function random() {
+export default function () {
   return Math.floor(Math.random() * 10)
 }
