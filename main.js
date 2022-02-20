@@ -1,8 +1,4 @@
-// use json - 1
-
-import myData from './myData.json'
-
-console.log(myData)
+// storage - 1
 
 const user = {
   name: 'Heropy',
@@ -13,11 +9,19 @@ const user = {
   ]
 }
 
-console.log(user)
+// localstorage 의 set, get, remove
+// localStorage.setItem('user', JSON.stringify(user))
+// console.log(JSON.parse(localStorage.getItem('user')))
+// localStorage.removeItem('user')
 
-const str = JSON.stringify(user)
-console.log('str', str)
-console.log(typeof str)
-
+// localstorage 의 수정 - 1
+const str = localStorage.getItem('user')
 const obj = JSON.parse(str)
-console.log('obj', obj)
+obj.age = 22
+console.log(obj)
+localStorage.setItem('user', JSON.stringify(obj))
+
+// 추후에 lowdb 찾아서 볼것
+
+
+
