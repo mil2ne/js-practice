@@ -1,27 +1,20 @@
-// storage - 1
+// omdb api
+// https://github.com/axios/axios
 
-const user = {
-  name: 'Heropy',
-  age: 85,
-  emails: [
-    'thesecon@gmail.com',
-    'mil2ne@gmail.com'
-  ]
+import axios from "axios"
+
+function fetchMovies() {
+  axios
+  .get('https://www.omdbapi.com/?apikey=70ccc60c&s=frozen')
+  .then(res => {
+    console.log(res)
+    const h1El = document.querySelector('h1')
+    const imgEl = document.querySelector('img')
+    h1El.textContent = res.data.Search[0].Title
+    imgEl.src = res.data.Search[0].Poster
+  })
+
 }
 
-// localstorage 의 set, get, remove
-// localStorage.setItem('user', JSON.stringify(user))
-// console.log(JSON.parse(localStorage.getItem('user')))
-// localStorage.removeItem('user')
 
-// localstorage 의 수정 - 1
-const str = localStorage.getItem('user')
-const obj = JSON.parse(str)
-obj.age = 22
-console.log(obj)
-localStorage.setItem('user', JSON.stringify(obj))
-
-// 추후에 lowdb 찾아서 볼것
-
-
-
+fetchMovies()
